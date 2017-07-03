@@ -58,18 +58,52 @@ html{
         }
         header {
             background-image: url("../images/header.jpg");
-            background-position: 0px -100px;
+            background-position: 0px -70px;
             height: 300px;
             width: 1000px;
             margin: auto;
+
+            nav {
+                height: 58px;
+                form {
+                    display: inline-block;
+                    input {
+                        display: inline-block;
+                        margin: 24px 0px 0px 10px;
+                        height: 27px;
+                        border: 1px solid #aaa;
+                        width: 200px;
+                        font-size: 100%;
+                        padding-left: 20px;
+                    }
+
+                    .searchIcon {
+                        margin-left: -200px;
+                        margin-top: 27px;
+                        position: absolute;
+                    }
+                }
+
+                ul {
+                    display: inline-block;
+                    text-align: right;
+                    float: right;
+                }
+            }
         }
         nav {
             width: 1000px;
             background-color: #ff6600;
-            margin: auto;
+            margin: -16px auto 0px auto;
+            display: block;
 
             ul {
                 padding: 10px 20px 10px 20px;
+                text-align: left;
+
+                .right {
+                    text-align: right;
+                }
                 a {
                     text-decoration: none;
                     color: #000;
@@ -85,9 +119,6 @@ html{
                         background-color: #ff4400;
                         cursor: pointer;
                     }
-                }
-                .login {
-                    margin-left: 492px;
                 }
                 .active {
                     background-color: #ff4400;

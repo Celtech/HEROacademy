@@ -22,4 +22,4 @@ if (is_dir($dir)){
 }
 ?>
 
-<script src="js/photo.js"></script>
+<script src="js/photo.min.js"></script>
