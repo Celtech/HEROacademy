@@ -9,3 +9,7 @@ if (is_dir("core/api")){
         closedir($dh);
     }
 }
+
+
+include "core/Facebook/autoload.php";
+include "core/PHPMailer/PHPMailerAutoload.php";

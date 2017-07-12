@@ -4,6 +4,7 @@
     $time = explode(' ', $time);
     $time = $time[1] + $time[0];
     $start = $time;
+    session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,8 +23,26 @@
                     <a onclick="document.getElementById('searchForm').submit(); return false;" href="javascript:{}"><img class="searchIcon" src="images/search.png"></a>
                 </form>
                 <ul>
+                    <?php
+                        if(!isset($_SESSION['user'])) {
+                    ?>
                     <li>Register</li>
-                    <li>Login</li>
+                    <li>Login &nbsp; &nbsp;
+                        <div class="loginBox">
+                            <form method="post" action="login.php">
+                                <input type="text" name="username" placeholder="Username">
+                                <input type="password" name="password" placeholder="Password">
+                                <input type="hidden" value="login" name="action">
+                                <input type="submit">
+                            </form>
+                        </div>
+                    </li>
+                    <?php
+                        } else {
+                            echo "<a href='login.php'><li>Logout</li></a>";
+                            echo "<li>".ucfirst($_SESSION['user'])."</li>";
+                        }
+                    ?>
                 </ul>
             </nav>
         </header>
@@ -33,8 +52,7 @@
                 <a href="index.php?view=smboard"><li <?=$_GET['view'] == "smboard" ? 'class="active"' : ''?>>SM Board</li></a>
                 <a href="index.php?view=photos"><li <?=$_GET['view'] == "photos" ? 'class="active"' : ''?>>Photos</li></a>
                 <a href="index.php?view=maxgear"><li <?=$_GET['view'] == "maxgear" ? 'class="active"' : ''?>>Max Gear Setups</li></a>
-                <!-- <li class="right">Register</li>
-                <li class="right">Login</li> -->
+                <a href="index.php?view=calendar"><li <?=$_GET['view'] == "calendar" ? 'class="active"' : ''?>>Event Calendar</li></a>
             </ul>
         </nav>
 
